@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/updateTT"
+        android:title="Update Timetable"/>
+    <item
+        android:id="@+id/language"
+        android:title="Language"/>
+    <item
+        android:id="@+id/changeCity"
+        android:title="Change City"/>
+    <item
+        android:id="@+id/clearSearches"
+        android:title="Clear Recent Searches"/>
+    <item
+        android:id="@+id/settings"
+        android:title="Settings"/>
+    <item
+        android:id="@+id/shareApp"
+        android:title="Share App"/>
+    <item
+        android:id="@+id/rateUs"
+        android:title="Rate Us"/>
+    <item
+        android:id="@+id/reportIssue"
+        android:title="Report Issue"/>
+    <item
+        android:id="@+id/suggestFeature"
+        android:title="Suggest a feature"/>
+
+
+
+</menu>
