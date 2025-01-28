@@ -1,14 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LocalFragment">
+    tools:context=".ExpressFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sourcedestn"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        app:cardCornerRadius="8dp"
+        app:contentPadding="5sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/etFromStation"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@null"
+                android:hint="From Station"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnClose"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="10sp"
+                android:src="@drawable/close"
+                app:layout_constraintRight_toRightOf="@+id/etFromStation"
+                app:layout_constraintTop_toTopOf="@+id/etFromStation" />
+
+
+            <ImageView
+                android:id="@+id/btnCloseToStation"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="10sp"
+                android:src="@drawable/close"
+                app:layout_constraintRight_toRightOf="@+id/etToStation"
+                app:layout_constraintTop_toTopOf="@+id/etToStation" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etFromStation" />
+
+            <ImageView
+                android:id="@+id/swapImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="40sp"
+                android:src="@drawable/updown"
+                app:layout_constraintBottom_toTopOf="@+id/etToStation"
+                app:layout_constraintRight_toRightOf="@id/etToStation"
+                app:layout_constraintTop_toBottomOf="@+id/etFromStation" />
+
+            <EditText
+                android:id="@+id/etToStation"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@null"
+                android:hint="To Station"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etFromStation" />
+
+            <Button
+                android:id="@+id/btnFindTrains"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#008000"
+                android:text="Find Trains"
+                android:textSize="17sp"
+                app:cornerRadius="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etToStation" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/stationIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        android:backgroundTint="@color/blue"
+        app:cardCornerRadius="8dp"
+        app:contentPaddingBottom="20dp"
+        app:contentPaddingLeft="10sp"
+        app:contentPaddingRight="10sp"
+        app:contentPaddingTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sourcedestn">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/stationIndicatorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Station-Indicator at:"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etStationIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_design"
+                android:hint="Enter Station Name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/stationIndicatorText" />
+
+            <ImageView
+                android:id="@+id/btnCloseForStation"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="10sp"
+                android:src="@drawable/close"
+                app:layout_constraintRight_toRightOf="@id/etStationIndicator"
+                app:layout_constraintTop_toTopOf="@id/etStationIndicator" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/displayMap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tvClose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mumbai Local Train/Metro Map"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
