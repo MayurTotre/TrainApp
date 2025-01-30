@@ -1,5 +1,6 @@
 package com.example.mytrainapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -37,6 +38,12 @@ class ExpressFragment : Fragment() {
 
         binding.btnCloseToStation.setOnClickListener {
             binding.etToStation.text.clear()
+        }
+
+        binding.btnPnr.setOnClickListener{
+            Intent(requireContext(), PnrActivity::class.java).also{
+                startActivity(it)
+            }
         }
     }
 
